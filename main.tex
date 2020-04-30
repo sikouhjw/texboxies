@@ -1,6 +1,6 @@
 % 使用ctexart文档类（用XeLaTeX编译，直接支持中文）
 \documentclass{ctexart}
-
+\usepackage{sourceserifpro,sourcesanspro,sourcecodepro}
 %导言区，可以在此引入必要的宏包
 \usepackage{commands}
 
@@ -29,9 +29,9 @@
   }
 }
 
-\newcommand{\qtmark}[1]{``#1''}
+\newcommand{\qtmark}[1]{“#1”}
 
-\title{\Large \heiti 采用tcolorbox宏包设计的用于同时排版\LaTeX 代码片段及其排版结果的宏包texboxie.sty}
+\title{\Large \heiti 采用 \pkg{tcolorbox} 宏包设计的用于同时排版\LaTeX 代码片段及其排版结果的宏包 \pkg{texboxie.sty}}
 \author{\zihao{4} \fangsong 耿楠\\\small \songti 西北农林科技大学信息
   工程学院，陕西$\cdot$杨凌，712100}
 
@@ -40,12 +40,11 @@
 \maketitle
 
 \begin{abstract}
-  在阅读其暨南大学数学系吕荐瑞的\LaTeX 文档排版教程及其源代码
-  (\url{https://lvjr.bitbucket.io/latex.html?2018})时，发现用
+  在阅读其暨南大学数学系吕荐瑞的 \href{https://lvjr.bitbucket.io/latex.html?2018}{\LaTeX 文档排版教程及其源代码}时，发现用
   \qtmark{盒子}排版\LaTeX 代码片段及其排版结果的方式在撰写\LaTeX 相关文档文档时非
-  常有效。在查看其源代码时，发现仅使用了\qtmark{listings}宏包实现了
-  \LaTeX 代码的排版，而未使用更为方便的\qtmark{minted}宏包，为此，结合
-  本人曾开发的boxiesty宏包(\url{https://github.com/registor/boxiesty})，设计了该texboxie宏包。
+  常有效。在查看其源代码时，发现仅使用了\pkg{listings}宏包实现了
+  \LaTeX 代码的排版，而未使用更为方便的\pkg{minted}宏包，为此，结合
+  本人曾开发的 \href{https://github.com/registor/boxiesty}{\pkg{boxiesty}} 宏包，设计了该 \href{https://github.com/registor/texboxies}{\pkg{texboxie}} 宏包。
 
   该宏包可以为经常需要编写\LaTeX 代码的排版人员提供帮助，但由于作
   者水平有限，一定有不足之处，欢迎大家多提宝贵意见和建议。
@@ -57,8 +56,8 @@
 \env{texdemoh}四个环境分别输出不同形式的代码片段及其排版结果。
 
 如果编译\LaTeX 源代码时指定了
-\qtmark{--shell-escape}选项，则使用\qtmark{minted}宏包排版\LaTeX 源代
-码，否则，则使用\qtmark{listings}宏包排版\LaTeX 源代码。
+\texttt{--shell-escape}选项，则使用\pkg{minted}宏包排版\LaTeX 源代
+码，否则，则使用\pkg{listings}宏包排版\LaTeX 源代码。
 
 \subsection{\env{codeonly}环境}
 
@@ -142,11 +141,11 @@ $$a^{p-1} \equiv 1 \pmod{p}$$
 \end{texdemov}
 
 \section{说明}
-本宏包建议使用\qtmark{minted}宏包实现代码的排版，用\qtmark{xelatex
-  --shell-escape main.tex}编译tex文件，但minted
+本宏包建议使用\pkg{minted}宏包实现代码的排版，用\texttt{xelatex
+  --shell-escape main.tex}编译tex文件，但 \pkg{minted}
 需要的python及其pygments模块，请提前安装该模块。
 
-若在编译是不使用\qtmark{--shell-escape}参数，则会自动切换到用listings
+若在编译是不使用 \texttt{--shell-escape} 参数，则会自动切换到用listings
 排版代码，注意有部分代码名称与pygments定义不一致，请自行查阅相关手册。
 
 \end{document}
